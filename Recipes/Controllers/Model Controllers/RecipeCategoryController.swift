@@ -16,7 +16,9 @@ class RecipeCategoryController {
     // MARK: - SOT (allows us to access properties of functions outside of their function)
     // = [] is giving the array a default value of initialized
     var categories: [RecipeCategory] = []
-    
+    init () {
+        load()
+    }
     // MARK: - CRUD
     // Create Category
     func create(title: String) {

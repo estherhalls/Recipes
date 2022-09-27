@@ -18,7 +18,7 @@ class RecipeController {
         
     }
     // Update Recipe
-    func update(updateRecipe: Recipe, newTitle: String, newInstructions: String, newCals: Int, newCookTime: Int) {
+    static func update(updateRecipe: Recipe, newTitle: String, newInstructions: String, newCals: Int, newCookTime: Int) {
         updateRecipe.title = newTitle
         updateRecipe.instructions = newInstructions
         updateRecipe.calories = newCals
@@ -27,13 +27,13 @@ class RecipeController {
         
     }
     // Delete Recipe
-    func delete(deleteRecipe: Recipe, from category: RecipeCategory) {
+    static func delete(deleteRecipe: Recipe, from category: RecipeCategory) {
         guard let index = category.recipes.firstIndex(of: deleteRecipe) else {return}
         category.recipes.remove(at: index)
         RecipeCategoryController.sharedInstance.save()
     }
     
-    func toggleFavorite(for recipe: Recipe) {
+    static func toggleFavorite(for recipe: Recipe) {
         recipe.isFavorite.toggle()
         RecipeCategoryController.sharedInstance.save()
     }

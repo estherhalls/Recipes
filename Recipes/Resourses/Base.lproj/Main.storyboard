@@ -41,7 +41,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="tdF-fv-0ek" kind="show" identifier="" id="H0F-5r-hFM"/>
+                                    <segue destination="tdF-fv-0ek" kind="show" identifier="toRecipeTBVC" id="H0F-5r-hFM"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -57,10 +57,6 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="categorySubtitleLabel" destination="dwG-ox-WSF" id="pPf-bF-phN"/>
-                        <outlet property="categoryTitleLabel" destination="Bj7-ou-0Yd" id="ZVf-hH-g3A"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v8y-Mc-GQv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -144,7 +140,7 @@
                                     <outlet property="favoriteButton" destination="qSS-cI-uBS" id="0zZ-d9-Hu8"/>
                                     <outlet property="recipeSubtitleLabel" destination="SlX-ja-GAj" id="dIk-PB-V6r"/>
                                     <outlet property="recipeTitleLabel" destination="fca-pC-Asd" id="7Y9-Ix-xKs"/>
-                                    <segue destination="RhT-1e-pN6" kind="show" identifier="" id="tzv-x7-B8a"/>
+                                    <segue destination="RhT-1e-pN6" kind="show" identifier="toDetailVC" id="tzv-x7-B8a"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -269,16 +265,13 @@ Lorem Ipsum...</string>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="calorieTextField" destination="EsZ-rL-Ppu" id="Wf8-89-1ik"/>
                         <outlet property="caloriesTextField" destination="EsZ-rL-Ppu" id="xIl-4G-jw7"/>
                         <outlet property="caloriesTextLabel" destination="xat-E7-wIB" id="rcT-Gu-lhz"/>
                         <outlet property="cookTimeTextField" destination="twu-Ol-hRa" id="ELo-9A-xx8"/>
                         <outlet property="cookTimeTextLabel" destination="8ya-aG-QqF" id="BSt-jS-JFv"/>
                         <outlet property="favoriteButton" destination="yQ1-mJ-F4h" id="2Ry-WZ-JCj"/>
                         <outlet property="instructionsTextView" destination="8sr-UW-cpW" id="DbW-K0-VJK"/>
-                        <outlet property="isFavoriteButton" destination="yQ1-mJ-F4h" id="QnK-wB-Ac0"/>
-                        <outlet property="recipeDescriptionTextField" destination="8sr-UW-cpW" id="Or3-Pl-Dka"/>
-                        <outlet property="recipeTitleTextField" destination="Svq-r2-xLA" id="qEU-tT-cge"/>
+                        <outlet property="recipeTitleTextField" destination="Svq-r2-xLA" id="L2S-xl-nIV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r8Q-Y8-Yf0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
