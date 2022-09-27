@@ -11,13 +11,13 @@
         <!--Recipes Categories-->
         <scene sceneID="ZkH-an-erO">
             <objects>
-                <tableViewController id="Rlg-Hc-xCK" sceneMemberID="viewController">
+                <tableViewController id="Rlg-Hc-xCK" customClass="RecipeCategoryTableViewController" customModule="Recipes" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="oJT-nd-Cx7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="Bj7-ou-0Yd" detailTextLabel="dwG-ox-WSF" style="IBUITableViewCellStyleSubtitle" id="dI6-It-l0r">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="categoryCell" textLabel="Bj7-ou-0Yd" detailTextLabel="dwG-ox-WSF" style="IBUITableViewCellStyleSubtitle" id="dI6-It-l0r">
                                 <rect key="frame" x="0.0" y="44.5" width="414" height="47.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dI6-It-l0r" id="LP5-iU-wDo">
@@ -53,19 +53,23 @@
                     <navigationItem key="navigationItem" title="Recipes Categories" id="BQ3-UF-OL9">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="8Md-hQ-N3O">
                             <connections>
-                                <action selector="addButtonTapped:" destination="Rlg-Hc-xCK" id="iwy-Yc-JZW"/>
+                                <action selector="addButtonTapped:" destination="Rlg-Hc-xCK" id="vQR-X4-Wcd"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="categorySubtitleLabel" destination="dwG-ox-WSF" id="pPf-bF-phN"/>
+                        <outlet property="categoryTitleLabel" destination="Bj7-ou-0Yd" id="ZVf-hH-g3A"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v8y-Mc-GQv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="178" y="-159"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Recipe List Table View Controller-->
         <scene sceneID="M6G-Dj-AbP">
             <objects>
-                <tableViewController id="tdF-fv-0ek" sceneMemberID="viewController">
+                <tableViewController id="tdF-fv-0ek" customClass="RecipeListTableViewController" customModule="Recipes" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="zba-ch-jTA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -78,6 +82,9 @@
                                     <rect key="frame" x="16" y="8" width="382" height="41"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <action selector="categoryNameTextField:" destination="rxk-xL-XmB" eventType="editingDidEnd" id="vBQ-CF-l9b"/>
+                                    </connections>
                                 </textField>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -89,7 +96,7 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="83" id="kZa-2c-dJY">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="recipeCell" rowHeight="83" id="kZa-2c-dJY" customClass="RecipeTableViewCell" customModule="Recipes" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="101.5" width="414" height="83"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kZa-2c-dJY" id="SUg-JS-KlC">
@@ -118,6 +125,7 @@
                                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                             <state key="normal" image="star.fill" catalog="system"/>
                                             <connections>
+                                                <action selector="isFavButtonTapped:" destination="kZa-2c-dJY" eventType="touchUpInside" id="Jn2-cj-xJB"/>
                                                 <action selector="toggleFavoriteButtonTapped:" destination="kZa-2c-dJY" eventType="touchUpInside" id="tZB-DD-E21"/>
                                             </connections>
                                         </button>
@@ -133,9 +141,9 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="favoriteButton" destination="qSS-cI-uBS" id="2v8-hu-IdQ"/>
-                                    <outlet property="recipeSubtitleLabel" destination="SlX-ja-GAj" id="Gtb-2u-g59"/>
-                                    <outlet property="recipeTitleLabel" destination="fca-pC-Asd" id="JPf-7v-ark"/>
+                                    <outlet property="favoriteButton" destination="qSS-cI-uBS" id="0zZ-d9-Hu8"/>
+                                    <outlet property="recipeSubtitleLabel" destination="SlX-ja-GAj" id="dIk-PB-V6r"/>
+                                    <outlet property="recipeTitleLabel" destination="fca-pC-Asd" id="7Y9-Ix-xKs"/>
                                     <segue destination="RhT-1e-pN6" kind="show" identifier="" id="tzv-x7-B8a"/>
                                 </connections>
                             </tableViewCell>
@@ -149,23 +157,24 @@
                     <navigationItem key="navigationItem" id="1iM-dA-Oby">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Osi-pT-5eL">
                             <connections>
-                                <action selector="addButtonTapped:" destination="tdF-fv-0ek" id="K24-Jm-tvR"/>
+                                <action selector="addButtonTapped:" destination="tdF-fv-0ek" id="eEW-WG-XwN"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="categoryNameTextField" destination="1hH-To-B4q" id="Nsz-o8-3Wf"/>
+                        <outlet property="categoryNameTextField" destination="1hH-To-B4q" id="cME-Vj-vCb"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lnv-Lt-SHx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="rxk-xL-XmB" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1179.7101449275362" y="-159.375"/>
         </scene>
-        <!--View Controller-->
+        <!--Recipe Detail View Controller-->
         <scene sceneID="Mzy-cw-9fH">
             <objects>
-                <viewController id="RhT-1e-pN6" sceneMemberID="viewController">
+                <viewController id="RhT-1e-pN6" customClass="RecipeDetailViewController" customModule="Recipes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ckb-E9-slL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -220,6 +229,7 @@
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" image="star.fill" catalog="system"/>
                                         <connections>
+                                            <action selector="isFavButtonTapped:" destination="RhT-1e-pN6" eventType="touchUpInside" id="bDz-qM-5lI"/>
                                             <action selector="isFavoriteButtonTapped:" destination="RhT-1e-pN6" eventType="touchUpInside" id="vgQ-h4-l04"/>
                                         </connections>
                                     </button>
@@ -254,13 +264,18 @@ Lorem Ipsum...</string>
                     <navigationItem key="navigationItem" id="Fxf-uI-ydI">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="BCk-WY-Gn5">
                             <connections>
-                                <action selector="saveButtonTapped:" destination="RhT-1e-pN6" id="J55-6k-IiI"/>
+                                <action selector="saveButtonTapped:" destination="RhT-1e-pN6" id="8hG-nO-qS2"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="calorieTextField" destination="EsZ-rL-Ppu" id="Wf8-89-1ik"/>
-                        <outlet property="cookTimeTextField" destination="twu-Ol-hRa" id="YmD-5Z-kCf"/>
+                        <outlet property="caloriesTextField" destination="EsZ-rL-Ppu" id="xIl-4G-jw7"/>
+                        <outlet property="caloriesTextLabel" destination="xat-E7-wIB" id="rcT-Gu-lhz"/>
+                        <outlet property="cookTimeTextField" destination="twu-Ol-hRa" id="ELo-9A-xx8"/>
+                        <outlet property="cookTimeTextLabel" destination="8ya-aG-QqF" id="BSt-jS-JFv"/>
+                        <outlet property="favoriteButton" destination="yQ1-mJ-F4h" id="2Ry-WZ-JCj"/>
+                        <outlet property="instructionsTextView" destination="8sr-UW-cpW" id="DbW-K0-VJK"/>
                         <outlet property="isFavoriteButton" destination="yQ1-mJ-F4h" id="QnK-wB-Ac0"/>
                         <outlet property="recipeDescriptionTextField" destination="8sr-UW-cpW" id="Or3-Pl-Dka"/>
                         <outlet property="recipeTitleTextField" destination="Svq-r2-xLA" id="qEU-tT-cge"/>
