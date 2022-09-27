@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EB7E92E928E35EA300A5FB58 /* RecipeCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7E92E828E35EA300A5FB58 /* RecipeCategory.swift */; };
+		EB7E92EB28E35EB500A5FB58 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7E92EA28E35EB500A5FB58 /* Recipe.swift */; };
+		EB7E92EE28E363B900A5FB58 /* RecipeCategoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7E92ED28E363B900A5FB58 /* RecipeCategoryController.swift */; };
+		EB7E92F028E363C900A5FB58 /* RecipeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7E92EF28E363C900A5FB58 /* RecipeController.swift */; };
 		F7FB3DE527163FDB0091D1B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FB3DE427163FDB0091D1B1 /* AppDelegate.swift */; };
 		F7FB3DE727163FDB0091D1B1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FB3DE627163FDB0091D1B1 /* SceneDelegate.swift */; };
 		F7FB3DEC27163FDB0091D1B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7FB3DEA27163FDB0091D1B1 /* Main.storyboard */; };
@@ -15,6 +19,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EB7E92E828E35EA300A5FB58 /* RecipeCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCategory.swift; sourceTree = "<group>"; };
+		EB7E92EA28E35EB500A5FB58 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		EB7E92ED28E363B900A5FB58 /* RecipeCategoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCategoryController.swift; sourceTree = "<group>"; };
+		EB7E92EF28E363C900A5FB58 /* RecipeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeController.swift; sourceTree = "<group>"; };
 		F7FB3DE127163FDB0091D1B1 /* Recipes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Recipes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7FB3DE427163FDB0091D1B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F7FB3DE627163FDB0091D1B1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -35,6 +43,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EB7E92EC28E35EB900A5FB58 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EB7E92E828E35EA300A5FB58 /* RecipeCategory.swift */,
+				EB7E92EA28E35EB500A5FB58 /* Recipe.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EB7E92F128E363D000A5FB58 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				EB7E92F228E363E200A5FB58 /* Model Controllers */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		EB7E92F228E363E200A5FB58 /* Model Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				EB7E92ED28E363B900A5FB58 /* RecipeCategoryController.swift */,
+				EB7E92EF28E363C900A5FB58 /* RecipeController.swift */,
+			);
+			path = "Model Controllers";
+			sourceTree = "<group>";
+		};
 		F7040FF52716526500B913AC /* Resourses */ = {
 			isa = PBXGroup;
 			children = (
@@ -68,6 +102,8 @@
 			isa = PBXGroup;
 			children = (
 				F7040FF52716526500B913AC /* Resourses */,
+				EB7E92EC28E35EB900A5FB58 /* Model */,
+				EB7E92F128E363D000A5FB58 /* Controllers */,
 			);
 			path = Recipes;
 			sourceTree = "<group>";
@@ -144,7 +180,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				F7FB3DE527163FDB0091D1B1 /* AppDelegate.swift in Sources */,
+				EB7E92EE28E363B900A5FB58 /* RecipeCategoryController.swift in Sources */,
 				F7FB3DE727163FDB0091D1B1 /* SceneDelegate.swift in Sources */,
+				EB7E92E928E35EA300A5FB58 /* RecipeCategory.swift in Sources */,
+				EB7E92EB28E35EB500A5FB58 /* Recipe.swift in Sources */,
+				EB7E92F028E363C900A5FB58 /* RecipeController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
